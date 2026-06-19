@@ -6,7 +6,9 @@ export const experience: ExperienceItem[] = [
         company: 'English Maxing',
         period: '2026 — Present',
         highlights: [
-            'Architected and deployed a full-stack learning management system on AWS',
+            'Architected and shipped a production learning management system (engmaxportal.com) on AWS Amplify Gen 2 — React/TypeScript SPA with Cognito auth, AppSync/GraphQL, DynamoDB, and S3 storage',
+            'Designed a role-based platform (student/tutor) with per-model authorization and JWT group-based access control',
+            'Built core LMS features: elo-based progress tracking, task/submission workflows, feedback, and an in-app notification system',
             'Presented future development proposals to shareholders',
         ],
     },
@@ -29,4 +31,6 @@ export const skills: string[] = [
     'SQL',
     'Git',
     'C#',
+    'AWS',
+    'GraphQL',
 ]

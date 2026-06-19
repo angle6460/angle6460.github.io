@@ -1,14 +1,14 @@
 import type {Project} from '../types'
 
-// Add or edit projects here — the Projects section renders this array.
+
 export const projects: Project[] = [
     {
-        title: 'Project One',
+        title: 'EngMax Portal',
         description:
-            'Placeholder description. Explain what the project does, the problem it solves, and your role in it in one or two sentences.',
-        tech: ['React', 'TypeScript', 'Vite'],
+            'A production learning management system for English Maxing tutoring, built and shipped end-to-end. Students and tutors each get a tailored experience: task and submission workflows, elo-based progress tracking, feedback, and in-app notifications, all backed by a serverless AWS stack.',
+        tech: ['React', 'TypeScript', 'AWS Amplify', 'Cognito', 'GraphQL', 'DynamoDB', 'S3'],
         repo: 'https://github.com/angle6460',
-        live: '',
+        live: 'https://engmaxportal.com',
     },
     {
         title: 'Project Two',
