@@ -1,50 +1,52 @@
 .nav {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  backdrop-filter: blur(10px);
-  background-color: rgba(10, 14, 20, 0.7);
-  border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(10px);
+    background-color: rgba(10, 14, 20, 0.7);
+    border-bottom: 1px solid var(--border);
 }
 
 .inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0.9rem 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0.9rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .brand {
-  font-family: var(--font-mono);
-  font-weight: 700;
-  color: var(--text);
-  letter-spacing: -0.02em;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.02em;
 }
+
 .brand:hover {
-  color: var(--accent);
-  text-decoration: none;
+    color: var(--accent);
+    text-decoration: none;
 }
 
 .links {
-  display: flex;
-  gap: 1.5rem;
-  font-size: 0.95rem;
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.95rem;
 }
 
 .links a {
-  color: var(--text-dim);
-  font-family: var(--font-mono);
+    color: var(--text-dim);
+    font-family: var(--font-mono);
 }
+
 .links a:hover {
-  color: var(--accent);
-  text-decoration: none;
+    color: var(--accent);
+    text-decoration: none;
 }
 
 @media (max-width: 520px) {
-  .links {
-    gap: 1rem;
-    font-size: 0.85rem;
-  }
+    .links {
+        gap: 1rem;
+        font-size: 0.85rem;
+    }
 }

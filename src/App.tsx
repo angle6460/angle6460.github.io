@@ -5,15 +5,15 @@ import Experience from './components/Experience'
 import Footer from './components/Footer'
 
 export default function App() {
-  return (
-    <>
-      <Nav />
-      <main>
-        <Hero />
-        <Projects />
-        <Experience />
-      </main>
-      <Footer />
-    </>
-  )
+    return (
+        <>
+            <Nav/>
+            <main>
+                <Hero/>
+                <Projects/>
+                <Experience/>
+            </main>
+            <Footer/>
+        </>
+    )
 }

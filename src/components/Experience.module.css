@@ -1,109 +1,116 @@
 .heading {
-  font-size: clamp(1.6rem, 4vw, 2rem);
-  margin-bottom: 2.5rem;
-  display: flex;
-  align-items: baseline;
-  gap: 0.6rem;
+    font-size: clamp(1.6rem, 4vw, 2rem);
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
 }
 
 .index {
-  font-family: var(--font-mono);
-  color: var(--accent);
-  font-size: 1.1rem;
-  font-weight: 500;
+    font-family: var(--font-mono);
+    color: var(--accent);
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 
 .timeline {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
 }
 
 .item {
-  display: grid;
-  grid-template-columns: 140px 1fr;
-  gap: 1.5rem;
-  padding: 0 0 2rem 1.5rem;
-  border-left: 1px solid var(--border);
-  position: relative;
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 1.5rem;
+    padding: 0 0 2rem 1.5rem;
+    border-left: 1px solid var(--border);
+    position: relative;
 }
+
 .item::before {
-  content: '';
-  position: absolute;
-  left: -5px;
-  top: 6px;
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background-color: var(--accent);
-  box-shadow: 0 0 0 4px var(--accent-dim);
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 6px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: var(--accent);
+    box-shadow: 0 0 0 4px var(--accent-dim);
 }
+
 .item:last-child {
-  padding-bottom: 0;
+    padding-bottom: 0;
 }
 
 .period {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  color: var(--text-dim);
-  padding-top: 0.1rem;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    padding-top: 0.1rem;
 }
 
 .role {
-  font-size: 1.15rem;
-  margin: 0 0 0.75rem;
+    font-size: 1.15rem;
+    margin: 0 0 0.75rem;
 }
+
 .company {
-  color: var(--accent);
-  font-weight: 500;
+    color: var(--accent);
+    font-weight: 500;
 }
 
 .highlights {
-  margin: 0;
-  padding-left: 1.1rem;
-  color: var(--text-dim);
-  font-size: 0.95rem;
+    margin: 0;
+    padding-left: 1.1rem;
+    color: var(--text-dim);
+    font-size: 0.95rem;
 }
+
 .highlights li {
-  margin-bottom: 0.35rem;
+    margin-bottom: 0.35rem;
 }
 
 .skillsWrap {
-  margin-top: 3rem;
+    margin-top: 3rem;
 }
+
 .skillsHeading {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
 }
+
 .skills {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  padding: 0;
-  margin: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    padding: 0;
+    margin: 0;
 }
+
 .skills li {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  color: var(--text);
-  background-color: var(--surface);
-  border: 1px solid var(--border);
-  padding: 0.4rem 0.8rem;
-  border-radius: var(--radius);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text);
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--radius);
 }
 
 .resume {
-  display: inline-block;
-  margin-top: 2.5rem;
-  font-family: var(--font-mono);
-  font-size: 0.95rem;
+    display: inline-block;
+    margin-top: 2.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
 }
 
 @media (max-width: 600px) {
-  .item {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
-  }
+    .item {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
 }
