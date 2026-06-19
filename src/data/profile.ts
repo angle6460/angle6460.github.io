@@ -4,7 +4,7 @@ export const profile = {
     name: 'Angel Parra',
     tagline: 'Software Developer',
 
-    bio: 'I build things for the web. This is placeholder copy — replace it with a couple of sentences about who you are, what you focus on, and what you are looking for.',
+    bio: 'I am a penultimate-year Computer Science student at Swinburne University, double-majoring in Artificial Intelligence and Software Development, and a developer who builds full-stack web applications end to end. As Head of Software & Technology at English Maxing, I architected and shipped a production learning management system on AWS — a React/TypeScript SPA backed by a serverless stack with Cognito auth, AppSync/GraphQL, and DynamoDB. I enjoy taking products from idea to launch and am always looking for the next problem worth solving.',
 
     resumeUrl: '/resume.pdf',
     email: 'ad.parra.r@gmail.com',

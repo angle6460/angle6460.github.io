@@ -4,7 +4,7 @@ import {profile, socials} from '../data/profile'
 export default function Hero() {
     return (
         <section id="about" className={styles.hero}>
-            <p className={styles.greeting}>Hi, my name is</p>
+            <p className={styles.greeting}>Welcome! My name is</p>
             <h1 className={styles.name}>{profile.name}</h1>
             <h2 className={styles.tagline}>{profile.tagline}</h2>
             <p className={styles.bio}>{profile.bio}</p>
