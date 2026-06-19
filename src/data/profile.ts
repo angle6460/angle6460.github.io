@@ -3,9 +3,9 @@ import type {SocialLink} from '../types'
 export const profile = {
     name: 'Angel Parra',
     tagline: 'Software Developer',
-    /** Short 2-3 sentence intro shown in the hero. */
+
     bio: 'I build things for the web. This is placeholder copy — replace it with a couple of sentences about who you are, what you focus on, and what you are looking for.',
-    /** Path to your resume in /public, or leave empty to hide the button. */
+
     resumeUrl: '/resume.pdf',
     email: 'ad.parra.r@gmail.com',
 }
