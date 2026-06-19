@@ -1,0 +1,30 @@
+.footer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+.socials a {
+  color: var(--text-dim);
+}
+.socials a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.note {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  font-family: var(--font-mono);
+  margin: 0;
+}

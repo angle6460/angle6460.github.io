@@ -1,0 +1,66 @@
+:root {
+  /* Dark / techy palette — change --accent to re-skin the whole site. */
+  --bg: #0a0e14;
+  --bg-soft: #11161f;
+  --surface: #151b26;
+  --border: #232c3b;
+  --text: #e6edf3;
+  --text-dim: #8b97a8;
+  --accent: #64ffda;
+  --accent-dim: rgba(100, 255, 218, 0.12);
+
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
+
+  --max-width: 960px;
+  --radius: 12px;
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Offset anchored scroll so the sticky nav doesn't cover section headings. */
+  scroll-padding-top: 80px;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse 80% 60% at 50% -10%, rgba(100, 255, 218, 0.08), transparent 70%);
+  background-attachment: fixed;
+  color: var(--text);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3 {
+  line-height: 1.2;
+  margin: 0 0 0.5em;
+}
+
+section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 5rem 1.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
