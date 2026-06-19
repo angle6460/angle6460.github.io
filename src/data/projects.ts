@@ -10,20 +10,4 @@ export const projects: Project[] = [
         repo: '',
         live: 'https://engmaxportal.com',
     },
-    {
-        title: 'Project Two',
-        description:
-            'Another placeholder. Swap in a real project — screenshots go in /public/images and are referenced via the optional "image" field.',
-        tech: ['Node.js', 'Express', 'PostgreSQL'],
-        repo: '',
-        live: '',
-    },
-    {
-        title: 'Project Three',
-        description:
-            'A third placeholder card so the grid looks balanced. Delete any you do not need.',
-        tech: ['Python', 'FastAPI'],
-        repo: '',
-        live: '',
-    },
 ]
