@@ -1,0 +1,74 @@
+/* Styles for 404.html, which GitHub Pages serves for unknown paths. Tokens come from index.css. */
+.not-found {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: var(--max-width);
+    min-height: 100vh;
+    min-height: 100dvh;
+    margin: 0 auto;
+    padding: 4rem var(--gutter) 6rem;
+}
+
+.not-found-code {
+    margin-bottom: 1.5rem;
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+}
+
+.not-found h1 {
+    margin-left: -0.04em;
+    font-size: clamp(3rem, 10vw, 7rem);
+    letter-spacing: -0.055em;
+    line-height: 0.95;
+}
+
+.not-found-text {
+    max-width: 44ch;
+    margin-top: 1.5rem;
+    color: var(--text-dim);
+    font-size: clamp(1.0625rem, 1.6vw, 1.25rem);
+}
+
+.not-found-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem 1.5rem;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
+}
+
+.not-found-links a {
+    color: var(--text-dim);
+    font-weight: 500;
+    transition: color var(--duration) var(--ease-out);
+}
+
+.not-found-links a:hover {
+    color: var(--text);
+}
+
+.not-found-links .not-found-home {
+    display: inline-flex;
+    align-items: center;
+    height: 2.75rem;
+    margin-right: 0.5rem;
+    padding: 0 1.25rem;
+    border-radius: var(--radius-md);
+    background-color: var(--accent);
+    color: var(--bg);
+    font-weight: 600;
+    transition: background-color var(--duration) var(--ease-out), transform 120ms var(--ease-out);
+}
+
+.not-found-links .not-found-home:hover {
+    background-color: color-mix(in srgb, var(--accent) 86%, white);
+    color: var(--bg);
+}
+
+.not-found-links .not-found-home:active {
+    transform: scale(0.98);
+}

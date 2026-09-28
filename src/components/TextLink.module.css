@@ -1,0 +1,27 @@
+.link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding-block: 0.375rem;
+    color: var(--text-dim);
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.3em;
+    transition: color var(--duration) var(--ease-out), text-decoration-color var(--duration) var(--ease-out);
+}
+
+.link:hover {
+    color: var(--text);
+    text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
+}
+
+.icon {
+    flex: none;
+    transition: transform var(--duration) var(--ease-out);
+}
+
+.link:hover .icon {
+    transform: translate(2px, -2px);
+}

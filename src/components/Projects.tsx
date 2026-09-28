@@ -1,43 +1,73 @@
 import styles from './Projects.module.css'
 import {projects} from '../data/projects'
+import SectionHeading from './SectionHeading'
+import StatusDot from './StatusDot'
+import TextLink from './TextLink'
+
+/** "https://www.example.com/path" → "example.com", so live links say where they go. */
+function hostname(url: string) {
+    try {
+        return new URL(url).hostname.replace(/^www\./, '')
+    } catch {
+        return 'Live site'
+    }
+}
 
 export default function Projects() {
     return (
-        <section id="projects">
-            <h2 className={styles.heading}>
-                <span className={styles.index}>01.</span> Projects
-            </h2>
+        <section id="projects" aria-labelledby="projects-title">
+            <SectionHeading id="projects-title" count={projects.length}>
+                Projects
+            </SectionHeading>
 
-            <div className={styles.grid}>
-                {projects.map((project) => (
-                    <article key={project.title} className={styles.card}>
-                        {project.image && (
-                            <img className={styles.thumb} src={project.image} alt={project.title} loading="lazy"/>
-                        )}
-                        <h3 className={styles.title}>{project.title}</h3>
-                        <p className={styles.desc}>{project.description}</p>
+            <ol className={styles.list}>
+                {projects.map((project, index) => (
+                    <li key={project.title} className={styles.item} data-reveal>
+                        <article className={styles.project}>
+                            <div className={styles.meta}>
+                                <span className={styles.index} aria-hidden="true">
+                                    {String(index + 1).padStart(2, '0')}
+                                </span>
+                                {project.live && (
+                                    <span className={styles.live}>
+                                        <StatusDot/>
+                                        Live
+                                    </span>
+                                )}
+                            </div>
 
-                        <ul className={styles.tech}>
-                            {project.tech.map((t) => (
-                                <li key={t}>{t}</li>
-                            ))}
-                        </ul>
+                            <div>
+                                <header className={styles.header}>
+                                    <h3 className={styles.title}>{project.title}</h3>
+                                    <div className={styles.links}>
+                                        {project.live && (
+                                            <TextLink href={project.live}>{hostname(project.live)}</TextLink>
+                                        )}
+                                        {project.repo && <TextLink href={project.repo}>Source</TextLink>}
+                                    </div>
+                                </header>
 
-                        <div className={styles.links}>
-                            {project.repo && (
-                                <a href={project.repo} target="_blank" rel="noreferrer">
-                                    Code
-                                </a>
-                            )}
-                            {project.live && (
-                                <a href={project.live} target="_blank" rel="noreferrer">
-                                    Live
-                                </a>
-                            )}
-                        </div>
-                    </article>
+                                {project.image && (
+                                    <img
+                                        className={styles.thumb}
+                                        src={project.image}
+                                        alt={`Screenshot of ${project.title}`}
+                                        loading="lazy"
+                                    />
+                                )}
+
+                                <p className={styles.desc}>{project.description}</p>
+
+                                <ul className={styles.tech} aria-label="Built with">
+                                    {project.tech.map((t) => (
+                                        <li key={t}>{t}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </article>
+                    </li>
                 ))}
-            </div>
+            </ol>
         </section>
     )
 }

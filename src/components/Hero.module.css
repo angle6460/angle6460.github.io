@@ -1,91 +1,132 @@
 .hero {
-    min-height: calc(100vh - 60px);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    min-height: calc(100vh - var(--nav-height));
+    min-height: calc(100dvh - var(--nav-height));
+    padding-top: clamp(3rem, 8vh, 5rem);
+    padding-bottom: clamp(4rem, 12vh, 7rem);
 }
 
-.greeting {
+.status {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: clamp(1.5rem, 4vh, 2.5rem);
+    color: var(--text-dim);
     font-family: var(--font-mono);
-    color: var(--accent);
-    margin: 0 0 1rem;
-    font-size: 0.95rem;
+    font-size: 0.8125rem;
 }
 
 .name {
-    font-size: clamp(2.5rem, 8vw, 4.5rem);
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    margin: 0;
+    /* Optical: pull the A's sloped side bearing flush with the text below. */
+    margin-left: -0.04em;
+    font-size: clamp(3.5rem, 12vw, 8.5rem);
+    letter-spacing: -0.055em;
+    line-height: 0.9;
 }
 
 .tagline {
-    font-size: clamp(1.4rem, 5vw, 2.5rem);
-    font-weight: 700;
+    margin-top: clamp(0.75rem, 1.5vw, 1.25rem);
     color: var(--text-dim);
-    margin: 0.25rem 0 1.5rem;
+    font-size: clamp(1.375rem, 3.4vw, 2.5rem);
+    font-weight: 500;
+    letter-spacing: -0.035em;
+    line-height: 1.15;
+}
+
+.intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    gap: 1.25rem clamp(2rem, 6vw, 5.5rem);
+    margin-top: clamp(2.5rem, 7vh, 4.5rem);
+    padding-top: clamp(1.5rem, 3vw, 2rem);
+    border-top: 1px solid var(--line);
+}
+
+.lead {
+    max-width: 36ch;
+    font-size: clamp(1.1875rem, 1.9vw, 1.5rem);
+    letter-spacing: -0.015em;
+    line-height: 1.45;
 }
 
 .bio {
-    max-width: 540px;
+    max-width: 58ch;
     color: var(--text-dim);
-    font-size: 1.05rem;
 }
 
 .actions {
     display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
     flex-wrap: wrap;
-}
-
-.primary,
-.secondary {
-    font-family: var(--font-mono);
-    font-size: 0.95rem;
-    padding: 0.75rem 1.5rem;
-    border-radius: var(--radius);
-    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+    align-items: center;
+    gap: 0.75rem 1.5rem;
+    margin-top: 2rem;
 }
 
 .primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    height: 2.875rem;
+    padding: 0 1.125rem 0 1.25rem;
+    border-radius: var(--radius-md);
     background-color: var(--accent);
     color: var(--bg);
+    font-size: 0.9375rem;
     font-weight: 600;
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.3), 0 10px 28px -14px var(--accent);
+    transition: background-color var(--duration) var(--ease-out), box-shadow var(--duration) var(--ease-out),
+    transform 120ms var(--ease-out);
 }
 
-.primary:hover {
-    text-decoration: none;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(100, 255, 218, 0.25);
+.primaryIcon {
+    transition: transform var(--duration) var(--ease-out);
 }
 
-.secondary {
-    border: 1px solid var(--accent);
-    color: var(--accent);
+.primary:active {
+    transform: scale(0.98);
 }
 
-.secondary:hover {
-    text-decoration: none;
-    background-color: var(--accent-dim);
-    transform: translateY(-2px);
+@media (hover: hover) {
+    .primary:hover {
+        background-color: color-mix(in srgb, var(--accent) 86%, white);
+        box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.35), 0 14px 32px -12px var(--accent);
+    }
+
+    .primary:hover .primaryIcon {
+        transform: translateY(2px);
+    }
 }
 
-.socials {
-    display: flex;
-    gap: 1.25rem;
-    margin-top: 2.5rem;
-    font-family: var(--font-mono);
-    font-size: 0.9rem;
+/* Staggered entrance: each block rises in slightly after the one above it. */
+@media (prefers-reduced-motion: no-preference) {
+    .hero > * {
+        animation: rise 900ms var(--ease-out) both;
+    }
+
+    .name {
+        animation-delay: 70ms;
+    }
+
+    .tagline {
+        animation-delay: 150ms;
+    }
+
+    .intro {
+        animation-delay: 250ms;
+    }
 }
 
-.socials a {
-    color: var(--text-dim);
+@keyframes rise {
+    from {
+        opacity: 0;
+        transform: translateY(1.25rem);
+    }
 }
 
-.socials a:hover {
-    color: var(--accent);
-    text-decoration: none;
+@media (max-width: 800px) {
+    .intro {
+        grid-template-columns: minmax(0, 1fr);
+    }
 }

@@ -1,22 +1,27 @@
 import styles from './Experience.module.css'
-import {experience, skills} from '../data/experience'
+import {experience, isCurrent, skills} from '../data/experience'
 import {profile} from '../data/profile'
+import SectionHeading from './SectionHeading'
+import StatusDot from './StatusDot'
+import TextLink from './TextLink'
 
 export default function Experience() {
     return (
-        <section id="experience">
-            <h2 className={styles.heading}>
-                <span className={styles.index}>02.</span> Experience
-            </h2>
+        <section id="experience" aria-labelledby="experience-title">
+            <SectionHeading id="experience-title" count={experience.length}>
+                Experience
+            </SectionHeading>
 
-            <ol className={styles.timeline}>
+            <ol className={styles.list}>
                 {experience.map((item) => (
-                    <li key={`${item.company}-${item.role}`} className={styles.item}>
-                        <div className={styles.period}>{item.period}</div>
-                        <div className={styles.body}>
-                            <h3 className={styles.role}>
-                                {item.role} <span className={styles.company}>@ {item.company}</span>
-                            </h3>
+                    <li key={`${item.company}-${item.role}`} className={styles.item} data-reveal>
+                        <p className={styles.period}>
+                            {isCurrent(item) && <StatusDot/>}
+                            {item.period}
+                        </p>
+                        <div>
+                            <h3 className={styles.role}>{item.role}</h3>
+                            <p className={styles.company}>{item.company}</p>
                             <ul className={styles.highlights}>
                                 {item.highlights.map((h, i) => (
                                     <li key={i}>{h}</li>
@@ -27,20 +32,23 @@ export default function Experience() {
                 ))}
             </ol>
 
-            <div className={styles.skillsWrap}>
-                <h3 className={styles.skillsHeading}>Skills</h3>
-                <ul className={styles.skills}>
-                    {skills.map((s) => (
-                        <li key={s}>{s}</li>
-                    ))}
-                </ul>
+            <div className={styles.skills} data-reveal>
+                <h3 className={styles.label}>Skills</h3>
+                <div>
+                    <ul className={styles.skillList}>
+                        {skills.map((s) => (
+                            <li key={s}>{s}</li>
+                        ))}
+                    </ul>
+                    {profile.resumeUrl && (
+                        <p className={styles.resume}>
+                            <TextLink href={profile.resumeUrl} newTab>
+                                Full resume (PDF)
+                            </TextLink>
+                        </p>
+                    )}
+                </div>
             </div>
-
-            {profile.resumeUrl && (
-                <a className={styles.resume} href={profile.resumeUrl} target="_blank" rel="noreferrer">
-                    Download full resume →
-                </a>
-            )}
         </section>
     )
 }

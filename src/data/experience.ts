@@ -23,6 +23,9 @@ export const experience: ExperienceItem[] = [
     },
 ]
 
+/** An ongoing role, e.g. "2026 — Present". */
+export const isCurrent = (item: ExperienceItem) => /present/i.test(item.period)
+
 export const skills: string[] = [
     'TypeScript',
     'React',

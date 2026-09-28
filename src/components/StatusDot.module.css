@@ -1,0 +1,31 @@
+.dot {
+    position: relative;
+    flex: none;
+    width: 0.4375rem;
+    height: 0.4375rem;
+    border-radius: 50%;
+    background-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.pulse::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background-color: var(--accent);
+    animation: ping 2.6s var(--ease-out) infinite;
+}
+
+@keyframes ping {
+    0% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+
+    70%,
+    100% {
+        opacity: 0;
+        transform: scale(3.2);
+    }
+}
